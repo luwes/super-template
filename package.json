@@ -4,7 +4,7 @@
   "description": "Build-less template inheritance in the browser. Handy for example or demo pages.",
   "type": "module",
   "main": "src/template-extends.js",
-  "files": [],
+  "files": ["src"],
   "repository": "luwes/template-extends",
   "author": "Wesley Luyten <me@wesleyluyten.com> (https://wesleyluyten.com)",
   "license": "MIT",

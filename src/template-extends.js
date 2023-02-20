@@ -1,5 +1,9 @@
 import { TemplateInstance, AttrPart, InnerTemplatePart, directives } from './directives.js';
 
+// Enable these directives by default.
+import './directives/extends.js';
+import './directives/block.js';
+
 export const processor = {
   processCallback(instance, parts, state) {
     if (!state) return;
