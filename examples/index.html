@@ -1,0 +1,19 @@
+<!doctype html>
+
+<script type="importmap">{"imports":{"template-extensions": "https://cdn.jsdelivr.net/npm/template-extensions/+esm"}}</script>
+<script type="module" src="../src/template-extends.js"></script>
+<title>template-extends demo</title>
+
+<body>
+
+<template extends="./layout.html">
+
+  <template block="content">
+    <h1>My blog post title</h1>
+    <p>{{super}}</p>
+
+    <img src="https://jinja.palletsprojects.com/en/3.1.x/_static/jinja-logo-sidebar.png" alt="">
+
+  </template>
+
+</template>

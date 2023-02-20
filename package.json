@@ -1,0 +1,26 @@
+{
+  "name": "template-extends",
+  "version": "0.0.0",
+  "description": "Build-less template inheritance in the browser. Handy for example or demo pages.",
+  "type": "module",
+  "main": "src/template-extends.js",
+  "files": [],
+  "repository": "luwes/template-extends",
+  "author": "Wesley Luyten <me@wesleyluyten.com> (https://wesleyluyten.com)",
+  "license": "MIT",
+  "homepage": "https://github.com/luwes/template-extends#readme",
+  "bugs": {
+    "url": "https://github.com/luwes/template-extends/issues"
+  },
+  "scripts": {
+    "dev": "node test/server.js"
+  },
+  "dependencies": {
+    "template-extensions": "^0.7.1"
+  },
+  "keywords": [
+    "template",
+    "template inheritance",
+    "web components"
+  ]
+}
