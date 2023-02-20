@@ -1,10 +1,12 @@
 {
   "name": "template-extends",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Build-less template inheritance in the browser. Handy for example or demo pages.",
   "type": "module",
   "main": "src/template-extends.js",
-  "files": ["src"],
+  "files": [
+    "src"
+  ],
   "repository": "luwes/template-extends",
   "author": "Wesley Luyten <me@wesleyluyten.com> (https://wesleyluyten.com)",
   "license": "MIT",
