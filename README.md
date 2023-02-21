@@ -26,7 +26,7 @@ Build-less template inheritance in the browser. Handy for example or demo pages.
 ```html
 <!doctype html>
 
-<script type="module" src="https://cdn.jsdelivr.net/npm/template-extends@0/+esm"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/template-extends"></script>
 <link rel="preload" as="fetch" href="./layout.html" crossorigin>
 
 <title>template-extends demo</title>
@@ -45,3 +45,7 @@ Build-less template inheritance in the browser. Handy for example or demo pages.
   </template>
 </template>
 ```
+
+## Related
+
+- [Template Extensions](https://github.com/luwes/template-extensions)
