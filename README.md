@@ -25,7 +25,10 @@ Build-less template inheritance in the browser. Handy for example or demo pages.
 
 ```html
 <!doctype html>
+
 <script type="module" src="https://cdn.jsdelivr.net/npm/template-extends@0/+esm"></script>
+<link rel="preload" as="fetch" href="./layout.html" crossorigin>
+
 <title>template-extends demo</title>
 
 <body>
