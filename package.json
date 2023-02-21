@@ -1,6 +1,6 @@
 {
   "name": "template-extends",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Build-less template inheritance in the browser. Handy for example or demo pages.",
   "type": "module",
   "main": "dist/template-extends.js",
