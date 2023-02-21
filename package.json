@@ -3,9 +3,10 @@
   "version": "0.0.3",
   "description": "Build-less template inheritance in the browser. Handy for example or demo pages.",
   "type": "module",
-  "main": "src/template-extends.js",
+  "main": "dist/template-extends.js",
   "files": [
-    "src"
+    "src",
+    "dist"
   ],
   "repository": "luwes/template-extends",
   "author": "Wesley Luyten <me@wesleyluyten.com> (https://wesleyluyten.com)",
@@ -15,10 +16,15 @@
     "url": "https://github.com/luwes/template-extends/issues"
   },
   "scripts": {
-    "dev": "node test/server.js"
+    "dev": "node test/server.js & esbuild src/template-extends.js --outdir=dist --bundle --minify-syntax --tree-shaking=true --watch",
+    "build": "esbuild src/template-extends.js --outdir=dist --bundle --minify-syntax --tree-shaking=true",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "template-extensions": "^0.7.1"
+    "template-extensions": "^0.7.2"
+  },
+  "devDependencies": {
+    "esbuild": "^0.17.10"
   },
   "keywords": [
     "template",
