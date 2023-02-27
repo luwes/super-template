@@ -16,7 +16,7 @@
     "url": "https://github.com/luwes/template-extends/issues"
   },
   "scripts": {
-    "dev": "node test/server.js & esbuild src/template-extends.js --outdir=dist --bundle --minify-syntax --tree-shaking=true --watch",
+    "dev": "wet serve --redirect :examples/ & esbuild src/template-extends.js --outdir=dist --bundle --minify-syntax --tree-shaking=true --watch",
     "build": "esbuild src/template-extends.js --outdir=dist --bundle --minify-syntax --tree-shaking=true",
     "prepublishOnly": "npm run build"
   },
@@ -24,7 +24,8 @@
     "template-extensions": "^0.7.2"
   },
   "devDependencies": {
-    "esbuild": "^0.17.10"
+    "esbuild": "^0.17.10",
+    "wet-run": "^0.0.4"
   },
   "keywords": [
     "template",
