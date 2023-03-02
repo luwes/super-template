@@ -1,22 +1,38 @@
 <!doctype html>
+<html class="h-100">
+<!-- TODO: not require this html start tag and allow class in super -->
 
 <script type="module" src="../dist/template-extends.js"></script>
 
+<link rel="preload" href="./base.html" as="fetch" crossorigin>
 <link rel="preload" href="./layout.html" as="fetch" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
-<title>template-extends demo</title>
+<title>Template Extends demo</title>
 
-<body>
+<body class="d-flex flex-column h-100">
+<!-- TODO: not require this body start tag and allow class in super -->
 
 <template extends="./layout.html">
 
-  <template block="content">
-    <h1>My blog post title</h1>
-    <p>{{super}}</p>
+  <template block="head">
+    {{super}}
 
-    <img width="180" height="170" src="https://jinja.palletsprojects.com/en/3.1.x/_static/jinja-logo-sidebar.png" alt="">
-
+    <style>
+      main > .container {
+        padding: 60px 15px 0;
+      }
+    </style>
   </template>
 
+  <template block="content">
+    <h1 class="mt-5">Template Extends - Bootstrap Example</h1>
+
+    <p class="lead">
+      Build-less template inheritance in the browser. Handy for example or demo pages.
+    </p>
+
+    <img width="180" height="170" src="jinja-logo-sidebar.webp" alt="
+      Nod to Jinja Template engine">
+  </template>
 </template>

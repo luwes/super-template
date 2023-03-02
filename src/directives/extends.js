@@ -12,9 +12,10 @@ export class ExtendsDirective extends Directive {
       const layoutHeadTp = document.createElement('template');
       layoutHeadTp.content.append(...layoutDoc.head.childNodes);
 
-      state.blocks = {};
+      state.collected = false;
+      state.blocks ||= {};
       state.blocks[''] = new TemplateInstance(part.template, state, processor);
-      state.layout = {};
+      state.collected = true;
 
       const layoutHeadTi = new TemplateInstance(layoutHeadTp, state, processor);
 

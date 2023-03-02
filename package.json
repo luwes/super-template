@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "esbuild": "^0.17.10",
-    "wet-run": "^0.0.4"
+    "wet-run": "^0.0.5"
   },
   "keywords": [
     "template",

@@ -4,7 +4,7 @@ export class BlockDirective extends Directive {
 
   async update(part, state, processor) {
 
-    if (state.layout) {
+    if (state.collected) {
       const blockTp = state.blocks[part.expression];
       if (blockTp) {
         state.super = new TemplateInstance(part.template, state, processor);
