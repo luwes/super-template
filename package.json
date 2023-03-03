@@ -1,6 +1,6 @@
 {
   "name": "super-template",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Build-less template inheritance in the browser. Handy for example or demo pages.",
   "type": "module",
   "main": "dist/super-template.js",
