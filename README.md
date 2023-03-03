@@ -2,21 +2,24 @@
 
 Build-less template inheritance in the browser. Handy for example or demo pages. 
 
+## Usage ([Codesandbox](https://codesandbox.io/s/super-template-8n3ci9]))
+
+- `<!doctype html>` is required in the child template because it's not
+  possible to dynamically change the doctype of a loaded HTML file.
+- The `link[rel=preload]` ensures the base html files are fetched in parallel 
+  with the script file. It's optional but recommended for faster page loads.
+
 ### layout.html
 
 ```html
 <template block="head">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </template>
 
 <main>
   <header>header</header>
-
-  <template block="content">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </template>
-
+  <template block="content"></template>
   <footer>footer</footer>
 </main>
 ```
@@ -31,8 +34,6 @@ Build-less template inheritance in the browser. Handy for example or demo pages.
 
 <title>Super Template Demo</title>
 
-<body>
-
 <template extends="./layout.html">
   <template block="head">
     {{super}}
@@ -40,8 +41,8 @@ Build-less template inheritance in the browser. Handy for example or demo pages.
   </template>
 
   <template block="content">
-    <h1>My blog post title</h1>
-    <p>{{super}}</p>
+    <h1>Super Template</h1>
+    <p>Build-less template inheritance in the browser. Handy for example or demo pages.</p>
   </template>
 </template>
 ```
