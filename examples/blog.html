@@ -1,0 +1,38 @@
+<!doctype html>
+
+<script type="module" src="../dist/super-template.js"></script>
+<link rel="preload" href="./base.html" as="fetch" crossorigin>
+<link rel="preload" href="./layout.html" as="fetch" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<title>Super Template blog</title>
+
+<template extends="./layout.html">
+  <template block="head">
+    {{super}}
+
+    <style>
+      main > .container {
+        padding: 60px 15px 0;
+      }
+    </style>
+  </template>
+
+  <template block="content">
+    <h1 class="mt-5">Super Template - ChatGPT Blog</h1>
+
+    <p class="lead">
+      Super template inheritance is a powerful feature in modern web development that allows for more efficient and organized code structure. It is a technique used in web frameworks such as Django and Flask to create a hierarchy of templates that can be extended and overridden by child templates.
+    </p>
+
+    <p>At the heart of super template inheritance is the concept of a base template, which serves as a blueprint for all child templates. The base template contains the basic HTML structure and any shared content or functionality that all child templates require. Child templates can then extend the base template and add their own content, as well as override or modify any blocks defined in the base template.</p>
+
+    <p>The key benefit of super template inheritance is that it allows for a more modular and reusable approach to web development. Instead of duplicating code across multiple pages, developers can define common elements in the base template and reuse them throughout the site. This not only makes the code easier to maintain and update, but also improves site performance by reducing the amount of duplicate code that needs to be loaded by the browser.</p>
+
+    <p>Another advantage of super template inheritance is that it provides a clear hierarchy of templates that makes it easier to manage complex websites with many pages and sections. By defining a base template that all child templates must extend, developers can ensure that the site maintains a consistent look and feel across all pages, while also allowing for customization and flexibility where needed.</p>
+
+    <p>In conclusion, super template inheritance is a powerful tool for web developers that can help improve code organization, modularity, and reusability. By defining a base template and allowing child templates to extend and override it, developers can create more efficient and maintainable code, while also ensuring a consistent user experience across the site.</p>
+
+    <img width="180" height="170" src="jinja-logo-sidebar.webp" alt="
+      Nod to Jinja Template engine">
+  </template>
+</template>
