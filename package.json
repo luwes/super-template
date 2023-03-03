@@ -1,23 +1,23 @@
 {
-  "name": "template-extends",
+  "name": "super-template",
   "version": "0.0.4",
   "description": "Build-less template inheritance in the browser. Handy for example or demo pages.",
   "type": "module",
-  "main": "dist/template-extends.js",
+  "main": "dist/super-template.js",
   "files": [
     "src",
     "dist"
   ],
-  "repository": "luwes/template-extends",
+  "repository": "luwes/super-template",
   "author": "Wesley Luyten <me@wesleyluyten.com> (https://wesleyluyten.com)",
   "license": "MIT",
-  "homepage": "https://github.com/luwes/template-extends#readme",
+  "homepage": "https://github.com/luwes/super-template#readme",
   "bugs": {
-    "url": "https://github.com/luwes/template-extends/issues"
+    "url": "https://github.com/luwes/super-template/issues"
   },
   "scripts": {
-    "dev": "wet serve --redirect :examples/ & esbuild src/template-extends.js --outdir=dist --bundle --minify-syntax --tree-shaking=true --watch",
-    "build": "esbuild src/template-extends.js --outdir=dist --bundle --minify-syntax --tree-shaking=true",
+    "dev": "wet serve --redirect :examples/ & esbuild src/super-template.js --outdir=dist --bundle --minify-syntax --tree-shaking=true --watch",
+    "build": "esbuild src/super-template.js --outdir=dist --bundle --minify-syntax --tree-shaking=true",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {

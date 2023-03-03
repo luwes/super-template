@@ -1,4 +1,4 @@
-# Template Extends
+# Super Template
 
 Build-less template inheritance in the browser. Handy for example or demo pages. 
 
@@ -26,10 +26,10 @@ Build-less template inheritance in the browser. Handy for example or demo pages.
 ```html
 <!doctype html>
 
-<script type="module" src="https://cdn.jsdelivr.net/npm/template-extends"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/super-template"></script>
 <link rel="preload" href="./layout.html" as="fetch" crossorigin>
 
-<title>template-extends demo</title>
+<title>Super Template Demo</title>
 
 <body>
 

@@ -49,6 +49,8 @@ export const processor = {
 
 document.querySelectorAll('template[extends]')
   .forEach(function checkTemplate(tpl) {
+
+    // Move all template[extends] to the body
     if (!document.body.contains(tpl)) {
       document.body.prepend(tpl);
     }
