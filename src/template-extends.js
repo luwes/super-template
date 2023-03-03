@@ -47,31 +47,15 @@ export const processor = {
   },
 };
 
-const observer = new MutationObserver((mutationsList) => {
-  for (let mutation of mutationsList) {
-    mutation.addedNodes.forEach(checkTemplate);
-  }
-});
-
-observer.observe(document, {
-  childList: true,
-  subtree: true,
-});
-
-document.querySelectorAll('template').forEach(checkTemplate);
-
-function checkTemplate(tpl) {
-  if (tpl.localName != 'template') return;
-
-  const directive = Object.keys(directives).find((n) => tpl.hasAttribute(n));
-
-  if (tpl.hasAttribute('directive') || directive) {
-    observer.disconnect();
+document.querySelectorAll('template[extends]')
+  .forEach(function checkTemplate(tpl) {
+    if (!document.body.contains(tpl)) {
+      document.body.prepend(tpl);
+    }
 
     const template = document.createElement('template');
     template.content.append(tpl.cloneNode(true));
 
     const instance = new TemplateInstance(template, {}, processor);
     tpl.replaceWith(instance);
-  }
-}
+  });

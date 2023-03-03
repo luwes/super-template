@@ -9,6 +9,13 @@ export class ExtendsDirective extends Directive {
       const data = await request(src);
       const layoutDoc = new DOMParser().parseFromString(data, 'text/html');
 
+      // Move all template[extends] to the body
+      for (let node of [...layoutDoc.head.childNodes]) {
+        if (node.localName === 'template' && node.getAttribute('extends')) {
+          layoutDoc.body.prepend(node);
+        }
+      }
+
       const layoutHeadTp = document.createElement('template');
       layoutHeadTp.content.append(...layoutDoc.head.childNodes);
 
@@ -32,6 +39,15 @@ export class ExtendsDirective extends Directive {
       document.head.append(...prepareNodes(layoutHeadTi.childNodes));
 
       await Promise.all(renderBlockingPromises);
+
+      // Copy html/head/body attributes from base to super if not set
+      for (let type of ['documentElement', 'head', 'body']) {
+        for (let attr of layoutDoc[type]?.attributes ?? []) {
+          if (!document[type].hasAttribute(attr.name)) {
+            document[type].setAttribute(attr.name, attr.value);
+          }
+        }
+      }
 
       const layoutBodyTp = document.createElement('template');
       layoutBodyTp.content.append(...layoutDoc.body.childNodes);

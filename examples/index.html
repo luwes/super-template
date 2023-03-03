@@ -1,20 +1,12 @@
 <!doctype html>
-<html class="h-100">
-<!-- TODO: not require this html start tag and allow class in super -->
 
 <script type="module" src="../dist/template-extends.js"></script>
-
 <link rel="preload" href="./base.html" as="fetch" crossorigin>
 <link rel="preload" href="./layout.html" as="fetch" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
-
 <title>Template Extends demo</title>
 
-<body class="d-flex flex-column h-100">
-<!-- TODO: not require this body start tag and allow class in super -->
-
 <template extends="./layout.html">
-
   <template block="head">
     {{super}}
 
