@@ -36,7 +36,7 @@ export class ExtendsDirective extends Directive {
         })
       );
 
-      document.head.append(...prepareNodes(layoutHeadTi.childNodes));
+      document.head.append(layoutHeadTi);
 
       await Promise.all(renderBlockingPromises);
 
@@ -53,7 +53,16 @@ export class ExtendsDirective extends Directive {
       layoutBodyTp.content.append(...layoutDoc.body.childNodes);
       const layoutBodyTi = new TemplateInstance(layoutBodyTp, state, processor);
 
-      part.replace(...prepareNodes(layoutBodyTi.childNodes));
+      // First extract all scripts from the layout body otherwise they will be 
+      // executed when the layout body is appended to the document before the
+      // custom elements are upgraded.
+      let scripts = layoutBodyTi.querySelectorAll('script');
+      let newScripts = [...scripts].map(script => script.cloneNode(true));
+      scripts.forEach(script => (script.textContent = ''));
+
+      part.replace(layoutBodyTi);
+
+      scripts.forEach(script => script.replaceWith(newScripts.shift()));
 
     } catch (error) {
       console.error(error);
@@ -63,27 +72,6 @@ export class ExtendsDirective extends Directive {
 
 defineDirective('extends', ExtendsDirective);
 
-
-function prepareNodes(nodes) {
-  let n = [];
-
-  for (let node of [...nodes]) {
-
-    if (node.localName === 'script') {
-      const script = document.createElement('script');
-
-      for (let a of node.attributes)
-        script.setAttribute(a.nodeName, a.nodeValue);
-
-      script.textContent = node.textContent;
-      node = script;
-    }
-
-    n.push(node);
-  }
-
-  return n;
-}
 
 async function request(resource) {
 

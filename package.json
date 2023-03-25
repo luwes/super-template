@@ -16,7 +16,7 @@
     "url": "https://github.com/luwes/super-template/issues"
   },
   "scripts": {
-    "dev": "wet serve --redirect :examples/ & esbuild src/super-template.js --outdir=dist --bundle --minify-syntax --tree-shaking=true --watch",
+    "dev": "wet serve --cors --redirect :examples/ & esbuild src/super-template.js --outdir=dist --bundle --minify-syntax --tree-shaking=true --watch",
     "build": "esbuild src/super-template.js --outdir=dist --bundle --minify-syntax --tree-shaking=true",
     "prepublishOnly": "npm run build"
   },
