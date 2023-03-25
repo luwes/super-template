@@ -21,7 +21,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "template-extensions": "^0.7.2"
+    "template-extensions": "0.7.3"
   },
   "devDependencies": {
     "esbuild": "^0.17.10",
